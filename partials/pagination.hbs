@@ -1,0 +1,15 @@
+<nav class="card-group">
+	{{#if prev}}
+	<div class="card m-b-0 text-xs-left">
+		<a href="{{page_url prev}}" title="Newer Posts" class="btn btn-lg btn-block p-a-1 text-muted">&laquo; Newer Posts</a>
+	</div>
+	{{/if}}
+	<div class="card m-b-0 p-a-1 text-xs-center">
+		<p class="h4 m-b-0">Page <strong>{{page}}</strong> of {{pages}}</p>
+	</div>
+	{{#if next}}
+	<div class="card m-b-0 text-xs-right">
+		<a href="{{page_url next}}" title="Older Posts" class="btn btn-lg btn-block p-a-1 text-muted">Older Posts &raquo;</a>
+	</div>
+	{{/if}}
+</nav>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="/assets/dist/img/apple-touch-icon.png">
+    <link rel="icon" href="/assets/dist/img/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}">
+
+    {{ghost_head}}
+
+  </head>
+
+  <body class="{{body_class}}">
+
+    {{! OffSet Navigation }}
+    {{navigation}}
+    <div class="nav-overlay offsetMenu" id="navOverlay"></div>
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="m-t-2">
+
+        <div class="p-y-1 bg-inverse">
+            <div class="container">
+
+                <p class="text-muted text-xs-center m-b-0">
+	                <small>
+	                    <a href="https://github.com/macawws/blackparrot" class="font-weight-bold text-light" target="_blank">BlackParrot</a> ©{{date format="YYYY"}} • Theme created by <a href="http://macaw.ws" class="font-weight-bold text-light" target="_blank">macaw.ws</a> • Published with <a class="font-weight-bold text-light" href="http://ghost.org" target="_blank">Ghost</a>
+	                </small>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    {{!-- Fluidvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "js/fluidvids.js"}}"></script>
+    {{!-- The main JavaScript file for BlackParrot --}}
+    <script type="text/javascript" src="{{asset "js/main.js"}}"></script>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+  </body>
+</html>

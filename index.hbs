@@ -1,0 +1,42 @@
+{{!< default}}
+{{! Header & Cover }}
+<header class="m-b-2">
+
+	{{> 'navbar'}}
+
+  <div class="jumbotron jumbotron-fluid jumbotron-cover bg-inverse">
+    {{#if @blog.cover}}<div class="cover-bg" style="background-image: url({{@blog.cover}})"></div>{{/if}}
+    <div class="container">
+      <h1 class="display-3">{{@blog.title}}</h1>
+      <p class="lead">{{@blog.description}}</p>
+    </div>
+  </div>
+
+</header>
+
+<main class="container" role="main">
+
+  {{#is "paged"}}
+  <section class="row">
+    <div class="col-xs-12">
+      {{pagination}}
+      <hr class="m-y-2">
+    </div>
+  </section>
+  {{/is}}
+
+  <section class="row">
+    <div class="col-xs-12">
+      {{> "loop"}}
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="col-xs-12">
+      <hr class="m-b-2 m-t-0">
+      {{pagination}}
+
+    </div>
+  </section>
+
+</main>

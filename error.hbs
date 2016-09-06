@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebSite">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}">
+    <meta name="keywords" content="">
+
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Content-Language" content="en">
+
+    <link href="//ajax.googleapis.com" rel="dns-prefetch">
+    <link href="//google-analytics.com" rel="dns-prefetch">
+    <link href="//disqus.com" rel="dns-prefetch">
+    <link href="//gumroad.com" rel="dns-prefetch">
+
+    <link rel="prerender" href="">
+
+    <link rel="sitemap" type="application/xml" title="Pages Sitemap" href="/sitemap-pages.xml">
+
+
+    <link rel="apple-touch-icon" href="/assets/dist/img/apple-touch-icon.png">
+    <link rel="icon" href="/assets/dist/img/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/assets/dist/css/blackpalm.min.css">
+
+    {{ghost_head}}
+
+  </head>
+
+  <body id="bWrapper" class="bg-faded bounceInRight animated {{body_class}}">
+
+    {{! OffSet Navigation }}
+    {{navigation}}
+    <div class="nav-overlay offsetMenu" id="navOverlay"></div>
+
+    <main class="bg-danger set-shadow mbs-cover full fadeIn animated">
+        <div class="cover-bg" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+
+    	{{> navbar}}
+
+        <div class="container cover-inner">
+
+            <div class="text-xs-center fadeIn animated">
+                <h1 class="display-4 font-weight-bold">
+                    <i class="fa fa-ban fa-3x"></i> <br>
+                    Page Not Found!
+                </h1>
+                <p class="lead">The page you are looking for was moved, removed, renamed or might never existed.</p>
+            </div>
+
+        </div>
+    </main>
+
+    {{! The main JavaScript file for BlackPalm }}
+    <script type="text/javascript" src="/assets/dist/js/blackpalm.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
+	<script type="text/javascript">
+	  WebFont.load({
+	    custom: {
+	      families: ['Montserrat:400,700:latin']
+	    }
+	  });
+	</script>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+  </body>
+</html>
