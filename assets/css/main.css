@@ -186,14 +186,14 @@ i {
 }
 
 /* Post */
-.post img {
+.post-template .post img {
   max-width: 100%;
   height: auto;
   margin: 2rem auto 2rem;
   display: block;
 }
 
-.post iframe {
+.post-template .post iframe {
   padding: 1rem;
 }
 
@@ -224,13 +224,13 @@ i {
     padding: 3rem 2rem 2rem;
     margin-bottom: 2rem;
   }
-  .post p {
+  .post-template .post p {
     word-break: break-all;
   }
-  .post pre {
+  .post-template .post pre {
     white-space: pre-wrap;
   }
-  .post pre code {
+  .post-template .post pre code {
     word-break: break-all;
   }
 }
