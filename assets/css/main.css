@@ -1,5 +1,6 @@
 /************************/
-
+/*                      */
+/************************/
 
 /* IcoMoon Fonts */
 @font-face {
@@ -152,6 +153,20 @@ i {
   opacity: 0;
 }
 
+.nav-offset .nav-pills .nav-link {
+  color: rgba(255,255,255,.65);
+}
+
+.nav-offset .nav-pills .nav-link:focus, 
+.nav-offset .nav-pills .nav-link:hover, 
+.nav-offset .nav-pills .nav-link.active, 
+.nav-offset .nav-pills .nav-link.active:focus, 
+.nav-offset .nav-pills .nav-link.active:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(0,0,0,.2);
+}
+
 .nav-opened {
   position: relative;
 }
@@ -165,19 +180,20 @@ i {
   transform: translate3d(-260px, 0, 0);
 }
 
-
+/* Error Page */
 .error-template .navbar {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.article img {
+/* Post */
+.post img {
   max-width: 100%;
   height: auto;
   margin: 2rem auto 2rem;
   display: block;
 }
 
-.article iframe {
+.post iframe {
   padding: 1rem;
 }
 
@@ -187,24 +203,34 @@ i {
 }
 
 .text-light:hover,
-.text-light:focus, 
-.text-light:active {
+.text-light:focus {
   color: rgba(255,255,255,.85);
 }
 
+/* Background fix */
+.bg-inverse a:not(.btn) {
+  color: rgba(255,255,255,.65);
+}
+
+.bg-inverse a:not(.btn):hover,
+.bg-inverse a:not(.btn):focus {
+  color: rgba(255,255,255,.85);
+}
+
+/* Media Queries */
 @media (max-width: 767px) {
   .mbs-cover {
     /*min-height: 40vh;*/
     padding: 3rem 2rem 2rem;
     margin-bottom: 2rem;
   }
-  .article p {
+  .post p {
     word-break: break-all;
   }
-  .article pre {
+  .post pre {
     white-space: pre-wrap;
   }
-  .article pre code {
+  .post pre code {
     word-break: break-all;
   }
 }

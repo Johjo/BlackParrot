@@ -11,7 +11,7 @@
         <ul class="nav nav-pills nav-stacked m-b-1">
 			{{#foreach navigation}}
 			<li class="nav-item nav-{{slug}}" role="presentation">
-				<a href="{{url absolute="true"}}" class="internal-link nav-link {{#if current}}active{{/if}}" title="{{label}}">{{label}}</a>
+				<a href="{{url absolute="true"}}" class="nav-link {{#if current}}active{{/if}}" title="{{label}}">{{label}}</a>
 			</li>
 			{{/foreach}}
         </ul>
@@ -20,13 +20,13 @@
 	<hr>
 
 	<div class="p-y-1 text-xs-center">
-		<a href="/rss" class="" title="Blackpalm Theme Feeds"><i class="icon-rss"></i></a>
+		<a href="/rss" class="btn btn-sm btn-secondary" title="Blackpalm Theme Feeds"><i class="icon-rss"></i></a>
 
-		<a href="https://www.facebook.com/macawws" title="Like Macaw.ws facebook fanpage"><i class="icon-facebook"></i></a>
+		<a href="https://www.facebook.com/macawws" class="btn btn-sm btn-secondary" title="Like Macaw.ws facebook fanpage"><i class="icon-facebook"></i></a>
 
-		<a href="https://twitter.com/macawws" title="Macaw.ws tweets"><i class="icon-twitter"></i></a>
+		<a href="https://twitter.com/macawws" class="btn btn-sm btn-secondary" title="Macaw.ws tweets"><i class="icon-twitter"></i></a>
 
-		<a href="https://plus.google.com/+Macawws" class="Macaw.ws G+ page"><i class="icon-google-plus"></i></a>
+		<a href="https://plus.google.com/+Macawws" class="btn btn-sm btn-secondary" title="Macaw.ws G+ page"><i class="icon-google-plus"></i></a>
 	</div>
 
 </nav>

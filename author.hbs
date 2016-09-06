@@ -1,61 +1,53 @@
 {{!< default}}
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-<header class="bg-primary set-shadow mbs-cover fadeIn animated">
-    <div class="cover-bg" {{#if cover}} style="background-image: url({{cover}})"{{/if}}></div>
+<header class="m-b-2">
 
-	{{> navbar}}
+	{{> 'navbar'}}
 
-    <div class="container cover-inner">
+  <div class="jumbotron jumbotron-fluid jumbotron-cover bg-inverse">
+    {{#if cover}}<div class="cover-bg" style="background-image: url({{cover}})"></div>{{/if}}
+    <div class="container text-xs-center">
+      {{#if image}}
+        <a href="{{url}}" title="{{name}}'s Posts" class=""><img class="img-circle img-thumbnail m-b-2" alt="{{name}}" src="{{image}}" width="92"></a>
+      {{/if}}
+		<h1 class="">{{name}}</h1>
 
-        <div class="text-xs-center fadeIn animated">
-            {{#if image}}
-            <a href="{{url}}" title="{{name}}'s Posts" class="internal-link"><img class="img-circle img-thumbnail logo m-b-2" alt="{{name}}" src="{{image}}"></a>
-            {{/if}}
-            <h1 class="font-weight-bold">
-            	<a href="{{url absolute="true"}}" title="{{name}}" class="internal-link">{{name}}</a>
-            </h1>
+		<p><i class="icon-stats-bars"></i> <strong>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</strong> {{#if location}}• <i class="icon-location"></i> {{location}}{{/if}} {{#if website}}• <i class="icon-link"></i> <a href="{{website}}">{{website}}</a>{{/if}}</p>
 
-			<p class="msb-desc-w"><i class="fa fa-file-text-o"></i> <strong>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</strong> {{#if location}}• <i class="fa fa-map-marker"></i> São Paulo, Brazil{{/if}} {{#if website}}• <i class="fa fa-link"></i> <a href="{{website}}">{{website}}</a>{{/if}}</p>
-
-			{{#if bio}}
-            <div class="mbs-bio-w m-x-auto d-block p-a-1">
-            	<em>{{bio}}</em>
-            </div>
-            {{/if}}
-        </div>
+		{{#if bio}}
+	    <p class="lead m-b-0">{{bio}}</p>
+	    {{/if}}
 
     </div>
+  </div>
+
 </header>
 {{/author}}
 
 <main class="container" role="main">
-	{{#is "paged"}}
-	<section class="row">
-		<div class="col-xs-12">
-		  {{pagination}}
-		  <hr class="m-b-3 m-t-1">
-		</div>
-	</section>
-	{{/is}}
 
-	<section class="row">
-	    {{^is "paged"}}
-	    <div class="col-xs-12">
-	      <div class="card card-block-title bg-primary card-inverse">
-	        <h2 class="font-weight-bold m-b-0 card-text" id="lposts"><i class="fa fa-file-text-o"></i> Latest Posts</h2>
-	      </div>
-	    </div>
-	    {{/is}}
-		<div class="col-xs-12">
-	    	{{> "loop"}}
-	    </div>
-    </section>
+  {{#is "paged"}}
+  <section class="row">
+    <div class="col-xs-12">
+      {{pagination}}
+      <hr class="m-y-2">
+    </div>
+  </section>
+  {{/is}}
 
-	<section class="row">
-		<div class="col-xs-12">
-		  <hr class="m-b-2 m-t-2">
-		  {{pagination}}
-		</div>
-	</section>
+  <section class="row">
+    <div class="col-xs-12">
+      {{> "loop"}}
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="col-xs-12">
+      <hr class="m-b-2 m-t-0">
+      {{pagination}}
+
+    </div>
+  </section>
+
 </main>
