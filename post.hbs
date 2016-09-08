@@ -1,31 +1,25 @@
 {{!< default}}
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-
 {{! Header & Cover }}
-<header class="bg-primary set-shadow mbs-cover m-b-0 fadeIn animated">
-    <div class="cover-bg" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+<header class="m-b-2">
 
-	{{> navbar}}
+    {{> 'navbar'}}
 
-    <div class="container cover-inner">
-
-        <div class="text-xs-center fadeIn animated">
-        	<div class="m-b-1">
-	            {{#foreach tags}}
-	            <a href="{{url}}" title="{{name}}" class="btn btn-tag btn-outline-secondary tag-{{id}} internal-link"><i class="fa fa-tag"></i> {{name}}</a>
-	            {{/foreach}}
-            </div>
-            <h1 class="display-4 font-weight-bold">
-            	<a href="{{url absolute="true"}}" title="{{title}}" class="internal-link">{{title}}</a>
-            </h1>
-            <p class="msb-desc-w">
-                {{#author}}
-                <a href="{{url}}" class="internal-link" title="{{name}}">{{#if image}}<img class="img-circle" alt="{{name}}" src="{{image}}">{{/if}} {{name}}</a>{{/author}} • <i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-            </p>
-        </div>
-
+  <div class="jumbotron jumbotron-fluid jumbotron-cover bg-inverse">
+    {{#if image}}<div class="cover-bg" style="background-image: url({{image}})"></div>{{/if}}
+    <div class="container text-xs-center">
+      <h1 class="display-4">{{title}}</h1>
+      <p>
+        {{#author}}
+        <a href="{{url}}" title="{{name}}" class="font-weight-bold">
+        <img class="img-circle" src="{{image}}" alt="{{name}}" width="24" nopin="nopin"> {{name}}</a> 
+        {{/author}} {{#if tags}} on {{#foreach tags}}<a href="{{url}}" title="{{name}}" class="tag-{{id}} font-italic">{{name}}</a> {{/foreach}} {{/if}} &nbsp;|&nbsp; 
+        <i class="icon-calendar"></i> <time datetime="{{date format='YYYY-MM-DD'}}"> {{date format='YYYY-MM-DD'}}</time>           
+      </p>
     </div>
+  </div>
+
 </header>
 
 <main class="container" role="main">
@@ -34,31 +28,25 @@
         <article class="col-xs-12 {{post_class}}">
 
             <div class="card m-b-2">
-                <div class="p-a-3">
+                <div class="p-a-2">
                     {{content}}
                 </div>
 
-                <div class="share-post">
+                <div class="p-b-2 share-post text-xs-center">
 
-                	<div class="card card-block m-b-0">
-						<h5 class="m-b-0 text-xs-center text-muted">Share this Post:</h5>
-                	</div>
+                    <hr>
 
-					<div class="card-group">
-						<div class="card m-b-0 b-l-0 text-xs-left" data-sr-id="1" style="">
-							<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="btn btn-facebook btn-lg btn-block"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a>
-						</div>
-						<div class="card m-b-0 text-xs-center" data-sr-id="2" style="">
-							<a href="https://twitter.com/intent/tweet?text={{title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="btn btn-twitter btn-lg btn-block"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a>
-						</div>
-						<div class="card m-b-0 text-xs-right" data-sr-id="3" style="">
-							<a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="btn btn-gplus btn-lg btn-block"><i class="fa fa-google-plus-square fa-lg"></i> Google+</a>
-						</div>
-					</div>
+					<h5 class="text-muted">Share this Post:</h5>
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="btn btn-secondary"><i class="icon-facebook"></i> Facebook</a>
+
+                    <a href="https://twitter.com/intent/tweet?text={{title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="btn btn-secondary"><i class="icon-twitter"></i> Twitter</a>
+
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="btn btn-secondary"><i class="icon-google-plus"></i> Google+</a>
 
 				</div>
 
-                <div class="p-a-2 card-inverse bg-primary author-info">
+                <div class="p-a-2 card-inverse bg-inverse author-info">
                     {{#author}}
                     <div class="media m-b-0">
                         {{#if image}}
@@ -81,8 +69,8 @@
                             <p class="card-text">Read <a href="{{url}}" title="Read more posts" class="font-weight-bold internal-link">more posts</a> by this author.</p>
                             {{/if}}
                             {{#if location}}
-                            <span class="text-muted"><i class="fa fa-map-marker"></i> {{location}}</span>{{/if}} {{#if website}}•
-                            <span class="text-muted"><i class="fa fa-link"></i> <a href="{{website}}" class="card-link">{{website}}</a></span>
+                            <span class="text-muted"><i class="icon-location"></i> {{location}}</span>{{/if}} {{#if website}}•
+                            <span class="text-muted"><i class="icon-link"></i> <a href="{{website}}" class="card-link">{{website}}</a></span>
                             {{/if}}
                         </section>
 
@@ -90,19 +78,6 @@
                     {{/author}}
                 </div>
 
-            </div>
-
-            {{!-- Comments hidden-xs-up--}}
-            <div class="card m-b-3">
-				<div class="card-header bg-inverse card-inverse">
-					<h3 class="m-b-0 text-xs-center card-text">
-                        <i class="fa fa-comments"></i> Comments
-                    </h3>
-				</div>
-
-                <div id="commentsList" class="card-block">
-					<div id="disqus_thread"></div>
-                </div>
             </div>
 
         </article>
