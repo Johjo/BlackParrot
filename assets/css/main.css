@@ -222,6 +222,11 @@ i {
   margin: 0 1rem 0 0;
 }
 
+/* Other Posts */
+.otherPosts .card-img {
+  opacity: .2;
+}
+
 /* Media Queries */
 @media (max-width: 767px) {
   .mbs-cover {
