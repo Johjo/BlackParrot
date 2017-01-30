@@ -1,32 +1,35 @@
 <nav id="offsetNav" class="nav-offset bg-inverse">
-	<div class="p-x-1 p-t-1">
-		<button class="btn btn-sm btn-outline-secondary btn-block offsetMenu" type="button" id="offsetMenu">
-	        hide <i class="icon-menu"></i>
+	<div class="px-1 pt-1">
+		<button class="btn btn-danger btn-block offsetMenu btn-slash" type="button" id="offsetMenu">
+	        Close <i class="fa fa-close"></i>
 	    </button>
 	</div>
 
     <hr>
 
-    <div class="p-l-1 p-r-1">
-        <ul class="nav nav-pills nav-stacked m-b-1">
+    <div class="pl-1 pr-1">
+        <ul class="nav nav-pills nav-stacked mb-1">
 			{{#foreach navigation}}
 			<li class="nav-item nav-{{slug}}" role="presentation">
-				<a href="{{url absolute="true"}}" class="nav-link {{#if current}}active{{/if}}" title="{{label}}">{{label}}</a>
+				<a href="{{url absolute="true"}}" class="internal-link nav-link {{#if current}}active{{/if}}" title="{{label}}">{{label}}</a>
 			</li>
 			{{/foreach}}
         </ul>
+
     </div>
 
 	<hr>
 
-	<div class="p-y-1 text-xs-center">
-		<a href="/rss" class="btn btn-sm btn-secondary" title="Blackpalm Theme Feeds"><i class="icon-rss"></i></a>
+	<div class="py-1 text-xs-center">
+		<a href="/rss" class="" title="Firmino.us Feeds"><i class="fa fa-rss-square fa-2x"></i></a>
 
-		<a href="https://www.facebook.com/macawws" class="btn btn-sm btn-secondary" title="Like Macaw.ws facebook fanpage"><i class="icon-facebook"></i></a>
+		<a href="https://www.facebook.com/firminous/" title="Like Firmino.us facebook fanpage" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
 
-		<a href="https://twitter.com/macawws" class="btn btn-sm btn-secondary" title="Macaw.ws tweets"><i class="icon-twitter"></i></a>
+		<a href="https://twitter.com/firminoweb" title="Firmino.us tweets" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
 
-		<a href="https://plus.google.com/+Macawws" class="btn btn-sm btn-secondary" title="Macaw.ws G+ page"><i class="icon-google-plus"></i></a>
+		<a href="https://www.linkedin.com/in/firminoweb" title="Linkedin" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a>
+
+		<a href="https://github.com/firminoweb" title="Github" target="_blank"><i class="fa fa-2x fa-github-square"></i></a>
 	</div>
 
 </nav>

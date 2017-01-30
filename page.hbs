@@ -1,44 +1,34 @@
 {{!< default}}
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
+
 {{! Header & Cover }}
-<header class="m-b-2">
+<header class="bg-primary set-shadow mbs-cover mb-0 fadeIn animated">
+    <div class="cover-bg" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
 
-    {{> 'navbar'}}
+	{{> navbar}}
+	<div class="cover-inner">
+	    <div class="container">
 
-  <div class="jumbotron jumbotron-fluid jumbotron-cover bg-inverse">
-    {{#if image}}<div class="cover-bg" style="background-image: url({{image}})"></div>{{/if}}
-    <div class="container text-xs-center">
-      <h1 class="display-4">{{title}}</h1>
-    </div>
-  </div>
+	        <div class="text-xs-center fadeIn animated">
+	            <h1 class="display-4 font-weight-bold">
+	            	<a href="{{url absolute="true"}}" title="{{title}}" class="internal-link">{{title}}</a>
+	            </h1>
+	        </div>
 
+	    </div>
+	</div>
 </header>
 
 <main class="container" role="main">
     <div class="row">
 
-        <article class="col-xs-12 {{post_class}}">
+        <article class="col-xs-12 article">
 
-            <div class="card m-b-2">
-                <div class="p-a-2">
+            <div class="card mb-3">
+                <div class="p-3">
                     {{content}}
                 </div>
-
-                <div class="p-b-2 share-post text-xs-center">
-
-                    <hr>
-
-                    <h5 class="text-muted">Share this Post:</h5>
-
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="btn btn-secondary"><i class="icon-facebook"></i> Facebook</a>
-
-                    <a href="https://twitter.com/intent/tweet?text={{title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="btn btn-secondary"><i class="icon-twitter"></i> Twitter</a>
-
-                    <a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="btn btn-secondary"><i class="icon-google-plus"></i> Google+</a>
-
-                </div>
-                
             </div>
 
         </article>

@@ -1,27 +1,84 @@
-## BlackParrot 0.3.0
+# BlackParrot 1.0.0
 
-![BlackParrot Ghost Theme](/assets/images/blackparrot-cover_mini.png?raw=true "Optional Title")
+![BlackParrot Ghost Theme](/assets/dist/img/blackparrot-cover-screen.png?raw=true "Optional Title")
 
-A Simple [Ghost](https://github.com/tryghost/ghost/) theme focused on content by [Macaw.ws](https://macaw.ws/)
+Clean, Elegant & Performatic Responsive Ghost Theme. Built with HTML5/CSS3/JavaScript (VanillaJS) without JS Frameworks to be Fast rendering.
 
-### Features
+## Instalation
 
-* Responsive layout
-* Responsive Video (fluidvids.js)
-* No-jQuery, Clean code and Performatic
-* Structured with Bootstrap 4
-* Blog navigation
-* Cover images for all pages
-* Custom error page
-* Related post
+#### first way:
 
-#### Coming Soon..
+* [Download the Theme](https://github.com/macawws/BlackParrot/archive/master.zip)
+* Upload the theme as described in the [Ghost Documentation](https://help.ghost.org/hc/en-us/articles/223241628-Uploading-Themes).
 
-* *Comments* 
-* *Accelerated Mobile Pages (AMP)*
-* *Native Subscribe*
+#### second way:
 
-### [Changelog](https://github.com/macawws/BlackParrot/blob/master/CHANGELOG.md)
+```
+$ cd your-ghost-folder/content/themes
+$ git clone https://github.com/macawws/BlackParrot.git 
+```
+
+## Configuring
+
+#### Gulp and Tasks:
+
+For customization/edit and build follow above:
+
+* At `your-ghost-folder/content/themes/blackparrot/` install all node dependencies `$ npm install`
+* And then install bower dependencies `$ bower install`
+* To build All elements after your customization: `$ gulp`.
+* To build only Assets(Images & Fonts): `$ gulp assets`.
+* To build only Scripts (JS): `$ gulp scripts`.
+* To build only Styles (CSS): `$ gulp assets`.
+
+#### Theme Configuration:
+
+* I. Disqus commenting system (post.hbs)
+* II. Google Analytics (login to ghost dashboard, and then, access: Settings -> Code Injection and paste your Google Analytics code)
+
+
+```
+$ cd your-ghost-folder/content/themes
+$ git clone https://github.com/macawws/BlackParrot.git 
+```
+
+## General Features
+
+* HTML5/CSS3/JavaScript
+* Fully responsive design
+* Content focused
+* NO-jQuery, NO JS Frameworks
+* Vanilla JS (Search, OffSet Menu and Libraries)
+* Major browser compatibility (Web & Mobile)
+* Google PageSpeed 95+
+* SEO Friendly
+* Responsive embedded videos
+* Custom Sass scripts
+* Bower package manager
+* Node/Gulp scripts
+
+## Theme Features
+* Error Page
+* Contact Page
+* Subscribe Page
+* AMP (Accelerated Mobile Pages)
+* PWA (Progressive Web Apps)
+
+## Theme Vendors
+* Bootstrap 4
+* FontAwesome
+* Animate.css
+* ScrollReveal.js
+* Fluidvids.js
+* Disqus Comments
+
+## Demo
+[https://firmino.us](https://firmino.us) [pt-br]
+
+---
+---
+
+#### * [View Changelog](https://github.com/macawws/BlackParrot/blob/master/CHANGELOG.md)
 
 ### Copyright & License
-Copyright (c) 2016 Macaw.ws - Released under the [MIT license](https://github.com/macawws/BlackParrot/blob/master/LICENSE).
+Copyright (c) 2017 Macaw.ws & @firminoweb - Released under the [MIT license](https://github.com/macawws/BlackParrot/blob/master/LICENSE).

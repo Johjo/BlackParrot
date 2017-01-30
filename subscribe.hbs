@@ -2,20 +2,10 @@
 <html lang="pt-br" itemscope itemtype="http://schema.org/WebSite">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}">
-    <meta name="keywords" content="">
 
-    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta http-equiv="Content-Language" content="pt-br">
-
-    <link href="//ajax.googleapis.com" rel="dns-prefetch">
-    <link href="//google-analytics.com" rel="dns-prefetch">
-    <link href="//disqus.com" rel="dns-prefetch">
 
     <link rel="apple-touch-icon" href="{{asset "dist/img/apple-touch-icon.png"}}">
     <link rel="icon" href="{{asset "dist/img/favicon.ico"}}">
@@ -26,7 +16,7 @@
 
   </head>
 
-  <body id="bWrapper" class="bg-faded bounceInRight animated {{body_class}}">
+  <body id="bWrapper" class="bg-faded fadeIn animated {{body_class}}">
 
     {{! OffSet Navigation }}
     {{navigation}}
@@ -35,8 +25,7 @@
     {{! OffSet Search }}
     {{> search}}
 
-    <main class="bg-inverse set-shadow mbs-cover full fadeIn animated">
-        <div class="cover-bg" {{#if image}}style="background-image: url({{image}})"{{/if}}></div>
+    <main class="bg-faded mbs-cover full inverse-navbar fadeIn animated">
 
         {{> navbar}}
 
@@ -44,15 +33,40 @@
             <div class="container">
 
                 <div class="text-xs-center fadeIn animated">
-                    <h1 class="display-4 font-weight-bold text-danger">
-                        <i class="fa fa-ban fa-3x"></i> <br>
-                        Page Not Found!
-                    </h1>
-                    <p class="lead text-muted">The page you are looking for was moved, removed, renamed or might never existed.</p>
+
+                <div class="card card-block">
+                {{#if success}}
+                    <h1 class="display-4 font-weight-bold text-success mb-2">Subscribed!</h1>
+
+                    <hr>
+
+                    <p class="lead text-muted">
+                        You subscribed by Success! on <span class="font-weight-bold">{{@blog.title}}</span> with email address <em>{{email}}</em>.
+                    </p>
+
+                    <a href="/" class="btn btn-lg btn-secondary btn-slash btn-block internal-link" title="Voltar a Página Inicial">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Go back to Home!
+                    </a
+                {{else}}
+                    <h3 class="mb-2">Send your email address and receive our updates.</h3>
+
+                    <hr class="mb-2">
+
+                    {{subscribe_form
+                      form_class="input-group"
+                      input_class="form-control form-control-lg"
+                      button_class="btn btn-lg btn-secondary btn-slash"
+                      placeholder="Seu Email"
+                      autofocus="true"
+                    }}
+
+                {{/if}}
+                </div>
                 </div>
 
             </div>
         </div>
+
     </main>
 
     <script type="text/javascript">
@@ -71,6 +85,7 @@
     </script>
 
     <script type="text/javascript" src="{{asset "dist/js/blackparrot.min.js"}}" defer></script> 
+
     {{ghost_foot}}
 
   </body>

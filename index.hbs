@@ -1,31 +1,41 @@
 {{!< default}}
-{{! Header & Cover }}
-<header class="m-b-2">
+<header class="bg-primary set-shadow mbs-cover fadeIn animated">
+    <div class="cover-bg" {{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}></div>
 
-	{{> 'navbar'}}
+		{{> 'navbar'}}
 
-  <div class="jumbotron jumbotron-fluid jumbotron-cover bg-inverse">
-    {{#if @blog.cover}}<div class="cover-bg" style="background-image: url({{@blog.cover}})"></div>{{/if}}
-    <div class="container text-xs-center">
-      <h1 class="display-3">{{@blog.title}}</h1>
-      <p class="lead">{{@blog.description}}</p>
-    </div>
-  </div>
+		<div class="cover-inner">
+	    <div class="container">
 
+	      <div class="text-xs-center fadeIn animated">
+	          {{#if @blog.logo}}
+	          <a href="{{@blog.url}}" title="{{@blog.title}}" class="internal-link"><img class="rounded logo mb-2" alt="{{@blog.title}}" src="{{@blog.logo}}"></a>
+	          {{/if}}
+	          <h2 class="h1 font-weight-bold">{{@blog.title}}</h2>
+	          <h1 class="lead">{{@blog.description}}</h1>
+	      </div>
+
+	    </div>
+	  </div>
 </header>
 
 <main class="container" role="main">
-
   {{#is "paged"}}
   <section class="row">
     <div class="col-xs-12">
       {{pagination}}
-      <hr class="m-y-2">
+      <hr class="mb-3 mt-1">
     </div>
   </section>
   {{/is}}
-
   <section class="row">
+    {{^is "paged"}}
+    <div class="col-xs-12">
+      <div class="card card-block-title bg-primary card-inverse">
+        <h2 class="font-weight-bold mb-0 card-text" id="lposts"><i class="fa fa-file-text-o"></i> Latest Posts</h2>
+      </div>
+    </div>
+    {{/is}}
     <div class="col-xs-12">
       {{> "loop"}}
     </div>
@@ -33,9 +43,8 @@
 
   <section class="row">
     <div class="col-xs-12">
-      <hr class="m-b-2 m-t-0">
+      <hr class="mb-2 mt-2">
       {{pagination}}
-
     </div>
   </section>
 

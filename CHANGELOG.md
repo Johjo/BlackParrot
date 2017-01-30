@@ -1,5 +1,41 @@
 ## Changelog
 
+### **BlackParrot 1.0.0 (the first stable release)**
+(31th Jan 2017)
+
+---
+
+#### General Features
+* HTML5/CSS3/JavaScript
+* Fully responsive design
+* Content focused
+* NO-jQuery, NO JS Frameworks
+* Vanilla JS (Search, OffSet Menu and Libraries)
+* Major browser compatibility (Web & Mobile)
+* Google PageSpeed 95+
+* SEO Friendly
+* Responsive embedded videos
+* Custom Sass scripts
+* Bower package manager
+* Node/Gulp scripts
+
+#### Theme Features
+* Error Page
+* Contact Page
+* Subscribe Page
+* AMP (Accelerated Mobile Pages)
+* PWA (Progressive Web Apps)
+
+#### Theme Vendors
+* Bootstrap 4
+* FontAwesome
+* Animate.css
+* ScrollReveal.js
+* Fluidvids.js
+* Disqus Comments
+
+<br>
+
 ### **BlackParrot 0.3.0**
 (7th Sep 2016)
 
