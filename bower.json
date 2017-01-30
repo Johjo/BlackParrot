@@ -18,12 +18,12 @@
     "offcanvas",
     "animations"
   ],
-  "license": "",
+  "license": "MIT",
   "homepage": "http://macaw.ws",
-  "devDependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
-    "font-awesome": "fontawesome#^4.6.3",
-    "fluidvids": "^2.4.1",
-    "scrollreveal": "^3.2.0"
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.5",
+    "font-awesome": "4.6.3",
+    "fluidvids": "2.4.1",
+    "scrollreveal": "3.2.0"
   }
 }

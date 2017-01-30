@@ -90,7 +90,7 @@
 /**
  * ScrollReveal
  * ------------
- * Version : 3.3.2
+ * Version : 3.2.0
  * Website : scrollrevealjs.org
  * Repo    : github.com/jlmakes/scrollreveal.js
  * Author  : Julian Lloyd (@jlmakes)
@@ -109,13 +109,13 @@
     }
 
     sr = this // Save reference to instance.
-    sr.version = '3.3.2'
+    sr.version = '3.2.0'
     sr.tools = new Tools() // *required utilities
 
     if (sr.isSupported()) {
       sr.tools.extend(sr.defaults, config || {})
 
-      sr.defaults.container = _resolveContainer(sr.defaults)
+      _resolveContainer(sr.defaults)
 
       sr.store = {
         elements: {},
@@ -191,11 +191,10 @@
     // Visual Aid: https://scrollrevealjs.org/assets/viewoffset.png
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
 
-    // Callbacks that fire for each triggered element reveal, and reset.
-    beforeReveal: function (domEl) {},
-    beforeReset: function (domEl) {},
-
-    // Callbacks that fire for each completed element reveal, and reset.
+    // Callbacks that fire for each completed element reveal, and if
+    // `config.reset = true`, for each completed element reset. When creating your
+    // callbacks, remember they are passed the element’s DOM node that triggered
+    // it as the first argument.
     afterReveal: function (domEl) {},
     afterReset: function (domEl) {}
   }
@@ -604,11 +603,8 @@
       elem = sr.store.elements[elemId]
       delayed = _shouldUseDelay(elem)
 
-      // Let’s see if we should revealand if so,
-      // trigger the `beforeReveal` callback and
-      // determine whether or not to use delay.
+      // Let’s see if we should reveal, and if so, whether to use delay.
       if (_shouldReveal(elem)) {
-        elem.config.beforeReveal(elem.domEl)
         if (delayed) {
           elem.domEl.setAttribute('style',
             elem.styles.inline +
@@ -623,8 +619,7 @@
           )
         }
 
-        // Let’s queue the `afterReveal` callback
-        // and mark the element as seen and revealing.
+        // Let’s queue the `afterReveal` callback and tag the element.
         _queueCallback('reveal', elem, delayed)
         elem.revealing = true
         elem.seen = true
@@ -633,15 +628,12 @@
           _queueNextInSequence(elem, delayed)
         }
       } else if (_shouldReset(elem)) {
-        //Otherwise reset our element and
-        // trigger the `beforeReset` callback.
-        elem.config.beforeReset(elem.domEl)
+        // If we got this far our element shouldn’t reveal, but should it reset?
         elem.domEl.setAttribute('style',
           elem.styles.inline +
           elem.styles.transform.initial +
           elem.styles.transition.instant
         )
-        // And queue the `afterReset` callback.
         _queueCallback('reset', elem)
         elem.revealing = false
       }

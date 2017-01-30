@@ -1,4 +1,4 @@
-# BlackParrot 1.0.0
+# BlackParrot Ghost Theme 1.0.0 [![Build Status](https://travis-ci.org/macawws/BlackParrot.svg?branch=master)](https://travis-ci.org/macawws/BlackParrot) [![devDependencies Status](https://david-dm.org/macawws/BlackParrot/dev-status.svg)](https://david-dm.org/macawws/BlackParrot?type=dev)
 
 ![BlackParrot Ghost Theme](/assets/dist/img/blackparrot-cover-screen.png?raw=true "Optional Title")
 
@@ -36,12 +36,6 @@ For customization/edit and build follow above:
 * I. Disqus commenting system (post.hbs)
 * II. Google Analytics (login to ghost dashboard, and then, access: Settings -> Code Injection and paste your Google Analytics code)
 
-
-```
-$ cd your-ghost-folder/content/themes
-$ git clone https://github.com/macawws/BlackParrot.git 
-```
-
 ## General Features
 
 * HTML5/CSS3/JavaScript
@@ -76,9 +70,8 @@ $ git clone https://github.com/macawws/BlackParrot.git
 [https://firmino.us](https://firmino.us) [pt-br]
 
 ---
----
 
-#### * [View Changelog](https://github.com/macawws/BlackParrot/blob/master/CHANGELOG.md)
+* #### [View Changelog](https://github.com/macawws/BlackParrot/blob/master/CHANGELOG.md)
 
 ### Copyright & License
 Copyright (c) 2017 Macaw.ws & @firminoweb - Released under the [MIT license](https://github.com/macawws/BlackParrot/blob/master/LICENSE).
