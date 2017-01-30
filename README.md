@@ -1,4 +1,5 @@
-# BlackParrot Ghost Theme 1.0.0 [![Build Status](https://travis-ci.org/macawws/BlackParrot.svg?branch=master)](https://travis-ci.org/macawws/BlackParrot) [![devDependencies Status](https://david-dm.org/macawws/BlackParrot/dev-status.svg)](https://david-dm.org/macawws/BlackParrot?type=dev)
+# BlackParrot Ghost Theme 1.0.0 [![Build Status](https://travis-ci.org/macawws/BlackParrot.svg?branch=master)](https://travis-ci.org/macawws/BlackParrot) 
+[![devDependencies Status](https://david-dm.org/macawws/BlackParrot/dev-status.svg)](https://david-dm.org/macawws/BlackParrot?type=dev)
 
 ![BlackParrot Ghost Theme](/assets/dist/img/blackparrot-cover-screen.png?raw=true "Optional Title")
 
